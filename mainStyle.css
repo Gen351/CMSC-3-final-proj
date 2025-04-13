@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add some padding to the body to prevent content from hiding behind navbar */
+body {
+    background-image: url("bg2.png");
+    background-repeat: repeat;
+
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+    
+    background-color: #561C24;
+
+}
+
+body img {
+    opacity: 0.9;
+}
+
+/* Navigation Bar General Design */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5vw; 
+
+   
+    background-color: #561C24; 
+    border: 3px dotted;
+
+    padding: 10px 20px; 
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    transition: transform 0.3s ease; 
+
+    box-shadow: 0 -4px 15px #000;
+}
+
+/* Logo */
+.navbar .logo {
+    margin-left: 10px; 
+}
+
+.navbar .logo img {
+    height: 100%; 
+    max-height: 60px; 
+    width: auto; 
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1); 
+}
+
+/* Navigation Links */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px; 
+}
+
+.navbar a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2rem; 
+    margin-top: 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #024522;
+}
+
+/* Make the Navigation Responsive (WOrks on Mobile Devices) */
+@media (max-width: 768px) {
+    .navbar {
+        height: 65px; 
+        padding: 5px 10px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem; 
+        padding: 5px 8px; 
+    }
+
+    .navbar .logo img {
+        height: 100%; 
+        max-height: 20px; 
+        width: auto; 
+        transition: transform 0.2s ease;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px;
+    }
+
+    .navbar a {
+        font-size: 0.8rem; 
+        padding: 4px 6px;
+    }
+
+    .navbar li {
+        margin: 0 10px; 
+    }
+
+    .navbar .logo img {
+        height: 100%; 
+        max-height: 20px; 
+        width: auto; 
+        transition: transform 0.2s ease;
+    }
+}
+
+
+
+
+.card-container {
+    max-width: 1200px;
+    columns: 300px;
+    padding: 10px;
+    padding-top: 50px; 
+    margin-top: 4vw; 
+    z-index: 1; 
+}
+
+.card {
+    background-color: #FFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 -4px 15px #7B1113;
+    background-color: #024522;
+    color: aliceblue;
+    cursor: pointer;
+    
+}
+.card:hover .text-content p{
+    color: aliceblue;
+
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+  
+
+.text-content {
+    padding: 0.5rem 1rem;
+
+}
+.text-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+
+}
+.text-content p {
+    font-size: 0.9rem;
+    color: #333;
+
+}
+
+
+/* Design for the Side Bar */
+
+.sidebar { /* Css code for the sidebar transition */
+    background-color: #F6FCDF;
+    position: fixed;
+    top: 0;
+    left: -40vw; 
+    width: 40vw;
+    height: 100%;
+    overflow-y: auto; 
+    color: white;
+    transition: left 0.5s ease-in-out;
+    z-index: 1001;
+    
+}
+
+/* Sidebar Open Class */
+.sidebar.open {
+    left: 0; 
+}
+
+.sidebar h2 {
+    padding-left: 1rem;
+    letter-spacing: 0.3em;
+
+}
+
+.sidebar p {
+    padding-left: 2rem;
+
+}
+
+.sidebar .sidebar-images {
+    padding: 20px;
+    columns: 300px;
+
+}
+
+.sidebar .sidebar-images img{
+    opacity: 1;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0.2rem;
+}
+
+
+/* Close Button */
+#closeSidebar {
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    background: #7B1113;
+    color: white;
+    justify-content: center;
+    border: #FFFFFF dotted 2px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Sidebar Card */
+.sidebar-card {
+    background-color: #E5E1DA;
+    box-shadow: 0 3px 8px rgb(227, 209, 185);
+    color: #333;
+}
+
+
+.sidebar-card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.sidebar-card .only-for-padding {
+    padding: 10px;
+}
+
+/* Prevent Scrolling When Sidebar is Open */
+.no-scroll {
+    overflow: hidden; 
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60vw; 
+        left: -60vw; 
+    }
+
+    .sidebar-card .only-for-padding {
+        padding: 10px;
+    }
+
+    .sidebar.open {
+        left: 0; /* Slide it in */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 80vw; 
+        left: -80vw; 
+    }
+
+    .sidebar-card .only-for-padding {
+        padding: 5px;
+    }
+
+    .sidebar.open {
+        left: 0; 
+    }
+
+    /* Adjust close button size for smaller screens */
+    #closeSidebar {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}
+
+
+/* Design for the Get Direction Button */
+
+.directions-button {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    margin: 5px;
+    
+    padding: 5px 10px;
+    
+    background-color: #c5c1b9;
+
+    border-top: 1px dashed #7f7f7f;
+    border-bottom: 1px dashed #7f7f7f;
+    /* border-right: 3px dashed #E5E1DA; */
+
+    /* box-shadow: 0 4px 4px #7d766c; */
+
+    color: rgb(57, 57, 57);
+    text-align: left;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    
+    transition: background-color 0.3s;
+    transition: transform 0.3s;
+}
+
+.directions-button:hover {
+    color: #FFF;
+    background-color: #561C24;
+    border-color: #FFF;
+
+    transform: translateX(10px);
+}
+
